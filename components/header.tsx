@@ -95,14 +95,38 @@ export const HeroHeader = () => {
                   ))}
                 </ul>
               </div>
+
+              {/* Buttons and Icons Container */}
               <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                <LuGithub size={26}/>
-                <FaDiscord size={28}/>
-                <Button asChild size="sm">
-                  <Link href="#">
-                    <span>Sign Up</span>
-                  </Link>
-                </Button>
+                {/* Mobile: show buttons including Sign Up */}
+                <div className="flex w-full sm:hidden justify-center gap-3">
+                  <Button asChild size="sm">
+                    <Link href="https://github.com/your-repo">
+                      <span>GitHub</span>
+                    </Link>
+                  </Button>
+                  <Button asChild size="sm">
+                    <Link href="https://discord.com/invite/your-link">
+                      <span>Discord</span>
+                    </Link>
+                  </Button>
+                  <Button asChild size="sm">
+                    <Link href="#">
+                      <span>Sign Up</span>
+                    </Link>
+                  </Button>
+                </div>
+
+                {/* Desktop: show icons and sign up button */}
+                <div className="hidden sm:flex items-center gap-3">
+                  <LuGithub size={26} />
+                  <FaDiscord size={28} />
+                  <Button asChild size="sm">
+                    <Link href="#">
+                      <span>Sign Up</span>
+                    </Link>
+                  </Button>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -111,3 +135,5 @@ export const HeroHeader = () => {
     </header>
   );
 };
+
+
